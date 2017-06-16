@@ -8,16 +8,6 @@
 module.exports = {
 
 
-attributes: {
-    Motivo:{
-      type:'string'
-    },
-    LatitudDondeEmpezo:{
-      type:'integer'
-    },
-    LongitudDondeEmpezo:{
-      type:'integer'
-    }
-  }
+
 };
 

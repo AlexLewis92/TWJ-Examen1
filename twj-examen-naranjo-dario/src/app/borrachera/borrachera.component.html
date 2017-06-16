@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+  <h1 style="text-align: center">Registro de Borracho</h1>
+  <br>
+  <br>
+
+  <div class="row">
+
+    <div class="col-sm-6" >
+
+      <div class="form-group" >
+
+        <label  class="col-form label"><strong>Motivo</strong></label>
+        <input  class="form-control"
+                placeholder="Ingrese nombre"
+                [(ngModel)]="nuevoBorracho.Motivo" type="text">
+        <label  class="col-form label"><strong>Longitud de Borracho</strong></label>
+        <input  class="form-control"
+                placeholder="Ingrese direccion"
+                [(ngModel)]="nuevoBorracho.LongitudDondeEmpezo" type="text">
+        <label  class="col-form label"><strong>Latitud:</strong></label>
+        <input  class="form-control"
+                placeholder="Ingrese capacidad"
+                [(ngModel)]="nuevoBorracho.LatitudDondeEmpezo" type="number">
+
+      </div>
+
+      <button class="btn btn-outline-success" (click)="crearBorracho()" >Crear Bodega</button>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>Bodegas</h3>
+
+  <hr>
+
+  <div  class="row">
+    <div  *ngFor="let borrachin of borracho">
+      <div class="col-md-6 ">
+        <div  class="card" style="width: 15rem;">
+          <div  class="card-block" >
+            <h4 style="text-align: center;" class="card-title" >{{ borrachin.Motivo }}</h4>
+            <p><strong>Motivo: </strong>{{ borrachin.Motivo  }}</p>
+            <p><strong>Longitud: </strong> {{ borrachin.LongitudDondeEmpezo  }}</p>
+            <p><strong>Latitud: </strong>{{ borrachin.LatitudDondeEmpezo}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

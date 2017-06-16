@@ -1,16 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { BorracheraComponent } from './borrachera/borrachera.component';
-import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import { JuegoComponent } from './Componentes/juego/juego.component';
+import { InicioComponent } from './Componentes/inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BorracheraComponent
+    JuegoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +19,6 @@ import {FormsModule} from "@angular/forms";
     HttpModule
   ],
   providers: [],
-  bootstrap: [BorracheraComponent]
+  bootstrap: [InicioComponent]
 })
 export class AppModule { }

@@ -7,8 +7,19 @@
 
 module.exports = {
 
-  attributes: {
+  connection:'localDiskDb',
 
+  attributes: {
+    Motivo:{
+      type:'String'
+    },
+    LatitudDondeEmpezo:{
+      type:'integer'
+    },
+    LongitudDondeEmpezo:{
+      type:'integer'
+    }
   }
+
 };
 

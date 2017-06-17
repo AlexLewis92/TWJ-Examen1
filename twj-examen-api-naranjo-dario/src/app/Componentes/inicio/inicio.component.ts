@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from "@angular/http";
 import {juegoInterface} from "../../interface/JuegoInterface";
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-inicio',
@@ -9,12 +9,14 @@ import {juegoInterface} from "../../interface/JuegoInterface";
 })
 export class InicioComponent implements OnInit {
 
-  juegos : juegoInterface[] = []
+  juegos: juegoInterface[] = []
+
   constructor(private _http: Http) {
   }
 
   ngOnInit() {
   }
+
 
   cargarJuego() {
     this._http

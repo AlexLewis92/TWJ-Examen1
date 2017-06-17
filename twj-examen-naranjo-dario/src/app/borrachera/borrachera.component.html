@@ -1,6 +1,6 @@
 <div class="container">
   <br>
-  <h1 style="text-align: center">Registro de Borracho</h1>
+  <h1 style="text-align: center;color: #014c8c">Registro de Borrachos</h1>
   <br>
   <br>
 
@@ -10,44 +10,55 @@
 
       <div class="form-group" >
 
-        <label  class="col-form label"><strong>Motivo</strong></label>
+        <label  class="col-form label"><strong>Nombre</strong></label>
         <input  class="form-control"
                 placeholder="Ingrese nombre"
+                [(ngModel)]="nuevoBorracho.Nombre" type="text">
+        <label  class="col-form label"><strong>Motivo</strong></label>
+        <input  class="form-control"
+                placeholder="Ingrese motivo"
                 [(ngModel)]="nuevoBorracho.Motivo" type="text">
         <label  class="col-form label"><strong>Longitud de Borracho</strong></label>
         <input  class="form-control"
-                placeholder="Ingrese direccion"
+                placeholder="longitud donde se emborracho"
                 [(ngModel)]="nuevoBorracho.LongitudDondeEmpezo" type="text">
         <label  class="col-form label"><strong>Latitud:</strong></label>
         <input  class="form-control"
-                placeholder="Ingrese capacidad"
+                placeholder="latitud donde se emborracho"
                 [(ngModel)]="nuevoBorracho.LatitudDondeEmpezo" type="number">
 
       </div>
 
-      <button class="btn btn-outline-success" (click)="crearBorracho()" >Crear Bodega</button>
+      <button type="button" class="btn btn-primary" (click)="crearBorracho()" >Crear Borracho</button>
 
     </div>
   </div>
+  <hr>
+
+  <h3>Usarios Borrachos</h3>
 
   <hr>
 
-  <h3>Bodegas</h3>
 
-  <hr>
+<div class="row-col-sm-12">
+  <div   class="col-md-4" *ngFor="let borrachin of borracho;let indice = index;">
 
-  <div  class="row">
-    <div  *ngFor="let borrachin of borracho">
-      <div class="col-md-6 ">
-        <div  class="card" style="width: 15rem;">
-          <div  class="card-block" >
-            <h4 style="text-align: center;" class="card-title" >{{ borrachin.Motivo }}</h4>
-            <p><strong>Motivo: </strong>{{ borrachin.Motivo  }}</p>
-            <p><strong>Longitud: </strong> {{ borrachin.LongitudDondeEmpezo  }}</p>
-            <p><strong>Latitud: </strong>{{ borrachin.LatitudDondeEmpezo}}</p>
-          </div>
-        </div>
+    <div style="background-color: #d0d5d8" class="row">
+
+      <div class="col-md-10">
+        <h4>{{borrachin.Nombre}}
+        </h4>
       </div>
+
     </div>
+    <br>
+    <p align="left">Motivo: {{borrachin.Motivo}}</p>
+    <p align="left">Latitud donde Empezo: {{borrachin.LongitudDondeEmpezo}}</p>
+    <p align="left">Latitud donde empezo{{borrachin.LatitudDondeEmpezo}}</p>
+    <p align="left">Fecha de Creacion:{{borrachin.createdAt}}</p>
+    <button class="btn btn-danger" (click)="eliminarBorracho(borrachin,indice)"> Eliminar Borracho</button>
+    <br><br>
   </div>
 </div>
+</div>
+

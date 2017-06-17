@@ -53,4 +53,27 @@ export class BorracheraComponent implements OnInit {
         }
       );
   }
+
+
+  eliminarBorracho(borrachin : BorracheraClass, indice: number) {
+
+    console.log("Indice:", this.borracho.indexOf(borrachin));
+    console.log("Indice con index: ", indice);
+    console.log("Usuarios : ", this.borracho);
+    console.log("Usuariofff : ", borrachin.id);
+
+
+    this._http.delete("http://localhost:1337/Borrachera?id=" + borrachin.id)
+      .subscribe(respuesta => {
+          this.borracho.splice(indice, 1);
+          let respuestaJson = respuesta.json();
+          console.log('respuestaJsonoooooo: ', respuestaJson);
+        },
+        error => {
+          console.log("Error ", error)
+        }
+      )
+
+  }
+
 }

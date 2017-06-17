@@ -1,3 +1,6 @@
+/**
+ * Created by USER on 16/06/2017.
+ */
 export interface juegoInterface{
   id?: string,
   idName: string,

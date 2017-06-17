@@ -10,6 +10,9 @@ module.exports = {
   connection:'localDiskDb',
 
   attributes: {
+    Nombre:{
+      type:'String'
+    },
     Motivo:{
       type:'String'
     },
